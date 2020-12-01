@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.tcc": "cpp",
+        "optional": "cpp",
+        "algorithm": "cpp",
+        "random": "cpp",
+        "istream": "cpp",
+        "numeric": "cpp",
+        "ranges": "cpp",
+        "streambuf": "cpp",
+        "iostream": "cpp"
+    },
+    "python.pythonPath": "/bin/python"
+}
