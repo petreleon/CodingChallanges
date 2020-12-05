@@ -2,11 +2,7 @@ file_opened = open("input.txt", 'r')
 lines = file_opened.read().splitlines()
 lines.append('')
 import re
-def isValidHexaCode(str):
- 
-    # Regex to check valid 
-    # hexadecimal color code.
-    regex = "^#([a-f0-9]{6})$"
+def isValidRegex(str, regex):
  
     # Compile the ReGex 
     p = re.compile(regex)
@@ -48,6 +44,7 @@ def checkValid(D):
     if not(len(D.keys()) == 8 or len(D.keys()) == 7 and 'cid' not in D.keys()):
         return False
     # part 2 begins
+
     byr = int(D['byr'])
     if not(byr >= 1920 and byr <= 2002):
         return False
@@ -69,13 +66,13 @@ def checkValid(D):
             return False
 
     hcl = D['hcl']
-    if not isValidHexaCode(hcl):
+    if not isValidRegex(hcl, "^#([a-f0-9]{6})$"):
         return False
     ecl = D['ecl']
     if ecl not in ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']:
         return False
     pid = D['pid']
-    if not isValidPassportID(pid):
+    if not isValidRegex(pid, "^([0-9]{9})$"):
         return False
     # part 2 ends
     return True
