@@ -36,33 +36,6 @@ for index, line in enumerate(lines):
 begin = 0
 line = ''
 
-'''
-def match(number, begin):
-    global line
-    global dictOfValues
-    begin_ = begin
-    if isinstance(dictOfValues[number], str):
-        if begin < len(line): 
-            if line[begin] == dictOfValues[number]:
-                return begin + 1
-            else:
-                return -1
-        else:
-            return -1
-    else:
-        for list_ in dictOfValues[number]:
-            begin = begin_
-            max_begin = begin
-            number_ = 0
-            while begin != -1 and begin != len(line) and number_< len(list_):
-                begin = match(list_[number_], begin)
-                max_begin = max(max_begin, begin)
-                number_ += 1
-            if begin == len(line) and number_ == len(list_):
-                raise Exception()
-            return max_begin + 1
-'''
-
 print(dictOfValues)
 
 def match(number: int, string :str, next_:list):
